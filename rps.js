@@ -11,6 +11,7 @@ function getComputerChoice() {
         return "Scissors";
     }
 }//end getComputerChoice function
+
 function game(){
     var playerWins = 0;
     var compWins = 0;
@@ -18,48 +19,48 @@ function game(){
     function playRound(playerSelection, computerSelection) {
         switch(playerSelection) {
             case "rock":
-	            if(computerSelection == "scissors") {
-                    playerWins++;
+	        if(computerSelection == "scissors") {
+        	    playerWins++;
                     return "You win! Rock beats scissors!";
-	            }
-	            else if(computerSelection == "paper") {
+		}
+	        else if(computerSelection == "paper") {
                     compWins++;
                     return "The computer wins. Paper beats rock.";
-	            }
+	        }
                 else {
                     return "It's a tie!";
-	            }
+	        }
                 break;
-	        case "paper":
-	            if(computerSelection == "rock") {
+	    case "paper":
+	        if(computerSelection == "rock") {
                     playerWins++;
                     return "You win! Paper beats rock!";
-	            }
-	            else if(computerSelection == "scissors") {
+	        }
+	        else if(computerSelection == "scissors") {
                     compWins++;
                     return "The computer wins. Scissors beat paper.";
-	            } 
-	            else {
+	        } 
+	        else {
                     return "It's a tie!";
-	            }
-	            break;
+	        }
+	        break;
             case "scissors":
-	            if(computerSelection == "paper") {
+	        if(computerSelection == "paper") {
                     playerWins++;
                     return "You win! Scissors beat paper!";
-	            }
+	        }
                 else if(computerSelection == "rock") {
                     compWins++;
                     return "The computer wins. Rock beats scissors.";
-	            }
-	            else {
+	        }
+	        else {
                     return "It's a tie!"
-	            }
-	            break;
-	        default:
-	            return "That is not one of the options.";
+	        }
+	        break;
+	    default:
+	        return "That is not one of the options.";
             }
-    }
+    }//end playRound function
 
     for(var i = 0; i < 5; i++) {
         const pChoice = prompt("Rock, paper, or scissors?");
@@ -67,7 +68,7 @@ function game(){
         console.log(playRound(pChoice.toLowerCase(), cChoice.toLowerCase()));
         console.log(`Player: ${playerWins} - Computer: ${compWins}`);
     }
-}
+}//end game function
 
 game();
 
